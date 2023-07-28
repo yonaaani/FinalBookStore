@@ -186,9 +186,9 @@ namespace ClientWPF.MVVM.ViewModel
                                 Password = MD5Generator.ProduceMD5Hash(Password),
                                 RegistrationDate = DateTime.Now
                             };
-                            if (IsAdmin && SecretPhrase.ToUpper() == "Я ЛЮБЛЮ ГРІНЧЕНКО!")
+                            if (IsAdmin && SecretPhrase.ToUpper() == "YONAAANI")
                                 newUser.RoleId = 1; // Admin
-                            else if (IsAdmin && SecretPhrase.ToUpper() != "Я ЛЮБЛЮ ГРІНЧЕНКО!")
+                            else if (IsAdmin && SecretPhrase.ToUpper() != "YONAAANI")
                             {
                                 MessageBox.Show("No, you are not admin!");
                                 newUser.RoleId = 2; // User

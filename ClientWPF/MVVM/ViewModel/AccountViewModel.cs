@@ -19,7 +19,7 @@ namespace ClientWPF.MVVM.ViewModel
 {
     internal class AccountViewModel : ObservableObject
     {
-        private const string _secret = "Я люблю Грінченко"; 
+        private const string _secret = "yonaaani"; 
         private int attempts;
         private readonly UsersRepository _usersRepository;
         public ObservableCollection<User> Users { get; set; }
