@@ -9,66 +9,179 @@
         Title="Registration" Height="600" Width="350" 
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen" 
-        FontFamily="Segoe UI Emoji"
         Icon="../../Images/Icons/icon.ico"
         WindowStyle="None"
-        MouseDown="Window_MouseDown">
+        MouseDown="Window_MouseDown"
+        Background="Transparent"
+       >
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="b2v" />
     </Window.Resources>
-    <Grid>
-        <Rectangle Height="280" VerticalAlignment="Top">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5 0">
-                    <GradientStop Color="#2a2e4d"/>
+    <Grid Background="Transparent">
+        <Border Background="White"
+                CornerRadius="12"
+                BorderThickness="2">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#3EB489" Offset="0"/>
+                    <GradientStop Color="#B0DE8C" Offset="0.75"/>
+                    <GradientStop Color="#90BA71" Offset="1"/>
                 </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-
-        <Rectangle Width="300" Height="350" VerticalAlignment="Bottom" Margin="0 80" RadiusY="10" RadiusX="10" Fill="white">
+            </Border.BorderBrush>
+        </Border>
+        <Rectangle Width="300" Height="381" VerticalAlignment="Top" Margin="25,170,25,0" RadiusY="10" RadiusX="10" Fill="white">
             <Rectangle.Effect>
-                <DropShadowEffect BlurRadius="15" Direction="0" RenderingBias="Quality" ShadowDepth="1" Color="Gray"/>
+                <DropShadowEffect BlurRadius="15" Direction="0" RenderingBias="Quality" ShadowDepth="1" Color="LightGray"/>
             </Rectangle.Effect>
         </Rectangle>
         <Grid VerticalAlignment="Bottom" Margin="35,80" Height="350">
-            <Label Content="Sign up" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 5 0 0" Foreground="Gray" FontSize="18" RenderTransformOrigin="0.528,-1.061"/>
+            <Label Content="Sign up" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 5 0 0" Foreground="#FF3EB489" FontSize="16" RenderTransformOrigin="0.528,-1.061" FontFamily="/Fonts//HoltwoodOneSC-Regular.ttf#Holtwood One SC"/>
             <StackPanel VerticalAlignment="Top" Margin="15 40 15 0">
-                <Label Content="Username:"/>
-                <TextBox FontFamily="Champagne &amp; Limousines" FontSize="18" Padding="3" x:Name="loginField" 
-                         Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" BorderBrush="AliceBlue" VerticalContentAlignment="Center" Background="#e9e9e9" Width="242" Height="35"/>
+                <Label Content="Username:" FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi" FontSize="16"/>
+                <Border CornerRadius="5" BorderBrush="#e9e9e9"  BorderThickness="0.7"  Width="242" Height="35">
+                    <TextBox FontSize="18" Padding="3" x:Name="loginField" 
+                         Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" BorderThickness="0" VerticalContentAlignment="Center" HorizontalAlignment="Center" Background="Transparent" Width="237" Height="30">
+                        <TextBox.Style>
+                            <Style TargetType="{x:Type TextBox}">
+                                <Setter Property="Foreground" Value="Black" />
+                                <Setter Property="CaretBrush" Value="Gray" />
+                                <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type TextBox}">
+                                            <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                                                <ScrollViewer x:Name="PART_ContentHost" />
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsEnabled" Value="False">
+                                                    <Setter Property="Opacity" Value="0.5" />
+                                                </Trigger>
+                                                <Trigger Property="IsFocused" Value="True">
+                                                    <Setter Property="Foreground" Value="Black" />
+                                                    <Setter Property="CaretBrush" Value="Gray" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </TextBox.Style>
+                    </TextBox>
+                </Border>
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="Password:"/>
+                    <Label Content="Password:"  FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi" FontSize="16"/>
                     <Label x:Name="passwordWeaknessChecker" HorizontalAlignment="Right" FontWeight="Bold"
                            Content="{Binding PasswordCheckerLabel, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding ForegroundColor, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
-                <components:BindablePasswordBox Grid.Column="1" Password="{Binding Password}" Padding="3" Height="41" Width="249"/>
-                <Label Content="Re-Enter:"/>
-                <components:BindablePasswordBox Grid.Column="1" Password="{Binding Password2}" Padding="3" Height="41" Width="249"/>
-                <Label Name="SecretPhrase" Content="Secret Phrase:" Visibility="{Binding IsChecked,ElementName=isAdmin,Converter={StaticResource b2v}}"/>
-                <components:BindablePasswordBox  x:Name="SecretPhraseBox" Grid.Column="1" Password="{Binding SecretPhrase}" Visibility="{Binding IsChecked,ElementName=isAdmin,Converter={StaticResource b2v}}" Padding="3" Height="41" Width="249"/>
-                <CheckBox x:Name="isAdmin" Content="I'm admin" FontFamily="Champagne &amp; Limousines" FontSize="13" Margin="0 30 0 15" IsChecked="{Binding IsAdmin}" />
+                <Border CornerRadius="5" BorderBrush="#e9e9e9"  BorderThickness="0.7"  Width="242" Height="35">
+                    <components:BindablePasswordBox Grid.Column="1" Password="{Binding Password}" Padding="3" Height="30" Width="237" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
+                </Border>
+                <Label Content="Re-Enter:" FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi" FontSize="16"/>
+                <Border CornerRadius="5" BorderBrush="#e9e9e9"  BorderThickness="0.7"  Width="242" Height="35">
+                    <components:BindablePasswordBox Grid.Column="1" Password="{Binding Password2}" Padding="3" Width="237" Height="30" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="18" Margin="0,0,0,-1"/>
+                </Border>
+                <Label Name="SecretPhrase" Content="Secret Phrase:" Visibility="{Binding IsChecked,ElementName=isAdmin,Converter={StaticResource b2v}}"  FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi" FontSize="16"/>
+                <components:BindablePasswordBox  x:Name="SecretPhraseBox" Grid.Column="1" Password="{Binding SecretPhrase}" Visibility="{Binding IsChecked,ElementName=isAdmin,Converter={StaticResource b2v}}" Padding="3" Height="41" Width="249" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="18"/>
+                <CheckBox x:Name="isAdmin" Content="I'm admin"  FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi" FontSize="16" Margin="0 30 0 15" IsChecked="{Binding IsAdmin}" >
+                    <CheckBox.Style>
+                        <Style TargetType="CheckBox">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#90BA71" />
+                                    <Setter Property="BorderBrush" Value="#90BA71" />
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#90BA71" />
+                                    <Setter Property="BorderBrush" Value="#90BA71" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </CheckBox.Style>
+                </CheckBox>
             </StackPanel>
         </Grid>
-        <Button Cursor="Hand" Width="160" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,536,0,0" Content="SIGNUP" Background="#2a2e4d" x:Name="loginButton" Foreground="White" Padding="7"
-                Command="{Binding SignUp}"/>
-        <Button Cursor="Hand" Width="160" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,568,0,0" Content="Back to sign in." Background="Transparent" x:Name="registerButton" BorderBrush="{x:Null}" Foreground="DarkBlue" Padding="7"
-                Command="{Binding BackToSignIn}"/>
-        <Button Background="Transparent" Command="{Binding OpenFileDialog}" VerticalAlignment="Top" Margin="30 15 30 0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Cursor="Hand" >
+        <Button Cursor="Hand" Width="160" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,531,0,0" Content="Sign Up" x:Name="loginButton" Foreground="White" Padding="7"
+                Command="{Binding SignUp}">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#FF3EB489"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#B0DE8C"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="160" Height="30"
+                                        CornerRadius="6"
+                                        Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Cursor="Hand" Width="78" HorizontalAlignment="Center" FontSize="8" VerticalAlignment="Top" Margin="0,570,0,0" Content="Back to sign in." Background="Transparent" x:Name="registerButton" BorderBrush="{x:Null}" Foreground="#FF8E8E93" FontStretch="ExtraExpanded" FontWeight="Bold" 
+                Command="{Binding BackToSignIn}">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Background="Transparent" Command="{Binding OpenFileDialog}" VerticalAlignment="Top" Margin="30 35 30 0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Cursor="Hand" >
             <Border
-                    Width="120" Height="120"
+                    Width="98" Height="98"
                     Padding="0"
                     CornerRadius="60"
-                    BorderThickness="1.6" BorderBrush="Gray">
+                    BorderThickness="1.6" BorderBrush="Transparent">
                 <Border.Background>
                     <ImageBrush ImageSource="{Binding ImagePath, UpdateSourceTrigger=PropertyChanged}"/>
                 </Border.Background>
             </Border>
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            
         </Button>
         <Label Content="Add your photo here" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,139,0,0" Foreground="White"/>
-        <Button VerticalAlignment="Top" HorizontalAlignment="Right" BorderThickness="0" Margin="6" Click="crossButton_Click" x:Name="crossButton" Width="25" Height="25">
-            <Button.Background>
-                <ImageBrush ImageSource="../../Images/Icons/close-icon.png"/>
-            </Button.Background>
+        <Button VerticalAlignment="Top" HorizontalAlignment="Right" BorderThickness="0" Margin="6" Click="crossButton_Click" x:Name="crossButton" Width="25" Height="25" Content="X" Foreground="White">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#90BA71"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#90BA71"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
         </Button>
     </Grid>
 </Window>

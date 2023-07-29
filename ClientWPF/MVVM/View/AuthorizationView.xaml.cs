@@ -35,5 +35,10 @@ namespace ClientWPF.MVVM.View
             if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
         }
+
+        private void BindablePasswordBox_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
