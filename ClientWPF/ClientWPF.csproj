@@ -369,7 +369,6 @@
     <Resource Include="Images\Icons\icon-256.png" />
     <Resource Include="Images\Icons\icon-128.png" />
     <Resource Include="Images\Icons\favicon.ico" />
-    <Resource Include="Images\Icons\icon-48.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Icons\arrow-forward.png" />
