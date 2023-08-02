@@ -416,6 +416,9 @@
   <ItemGroup>
     <Resource Include="Images\defUser.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\hello.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

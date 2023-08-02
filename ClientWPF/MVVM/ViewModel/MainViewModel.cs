@@ -123,7 +123,7 @@ namespace ClientWPF.MVVM.ViewModel
             else
                 ImagePath = @"../../Images/defUser.png";
             // ViewModels
-            HomeVM = new HomeViewModel(_productsRepository, _producersRepository);
+            HomeVM = new HomeViewModel(_productsRepository, _producersRepository, _usersRepository);
             ProductsVM = new ProductsViewModel(_productsRepository, _producersRepository, _categoriesRepository, _productImagesRepository, user);
             ProductVM = new AddProductViewModel(_productImagesRepository, _categoriesRepository, _producersRepository, _productsRepository);
             CategoryVM = new CategoryViewModel(_categoriesRepository, _producersRepository, _productsRepository, _productImagesRepository);
