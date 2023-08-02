@@ -361,7 +361,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Icons\close-icon.png" />
-    <Resource Include="Images\money_easy.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Icons\icon-1024.png" />
@@ -410,15 +409,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\users_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\fast_delivery.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\info_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\new_product.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Icons\bookLogo.png" />

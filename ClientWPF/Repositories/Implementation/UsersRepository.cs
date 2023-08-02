@@ -3,8 +3,10 @@ using ClientWPF.Repositories.Interfaces;
 using ModelsLibrary.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,6 +58,10 @@ namespace ClientWPF.Repositories.Implementation
                 _dbManager.Users.AddOrUpdate(changedUser);
                 _dbManager.SaveChanges();
             }
+        }
+        public User GetByUsername(string userName)
+        {
+            return _dbManager.Users.SingleOrDefault(user => user.Name == userName);
         }
     }
 }

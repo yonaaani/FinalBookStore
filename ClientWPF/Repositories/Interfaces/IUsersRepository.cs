@@ -15,5 +15,7 @@ namespace ClientWPF.Repositories.Interfaces
         void DeleteUser(int userId);
         List<User> GetAllUsers();
         List<User> GetUsersByContaintsLetters(string letters);
+
+        User GetByUsername(string userName);
     }
 }

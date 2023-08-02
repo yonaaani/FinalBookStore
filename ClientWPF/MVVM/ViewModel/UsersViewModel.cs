@@ -13,7 +13,7 @@ using System.Windows;
 
 namespace ClientWPF.MVVM.ViewModel
 {
-    internal class UsersViewModel : ObservableObject
+     internal class UsersViewModel : ObservableObject
     {
         private readonly UsersRepository _usersRepository;
         private readonly UserImagesRepository _userImagesRepository;
@@ -42,6 +42,7 @@ namespace ClientWPF.MVVM.ViewModel
                 OnPropertyChanged(nameof(SelectedUser));
             }
         }
+       
         private string _searchedPhrase;
         public string SearchedPhrase
         {

@@ -4,22 +4,36 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ClientWPF.MVVM.View"
+             xmlns:viewModel="clr-namespace:ClientWPF.MVVM.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="705" d:DesignWidth="955">
+
     <StackPanel>
-        <TextBlock Text="Hello! Its our new Online Shop"
-                   Foreground="White"
+        <TextBlock 
+                   Foreground="#FF3EB489"
                    FontSize="30"
                    HorizontalAlignment="Left"
-                   Margin="0,0,0,20"/>
+                   Margin="50,20,0,20"
+                   FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi">
+             <Run Text="{Binding CurrentUser.Name}"/>
+             <InlineUIContainer>
+                            <Image Source="/Images/hello.png" Height="14" Width="14" Margin="2,0,0,0"/>
+                        </InlineUIContainer>
+        </TextBlock>
+        <TextBlock Text="What do you want to read today?"
+                   Foreground="Gray"
+                   FontSize="25"
+                   HorizontalAlignment="Left"
+                   Margin="50,-15,0,35"
+                   FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi"/>
         <StackPanel Orientation="Horizontal">
 
-            <Border Width="300"
-                    Height="310" CornerRadius="10">
+            <Border Width="250"
+                    Height="220" CornerRadius="10" Margin="20 0 20 0">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                        <GradientStop Color="#5bc3ff" Offset="0.0"/>
-                        <GradientStop Color="#3aa0ff" Offset="1"/>
+                        <GradientStop Color="#B0DE8C" Offset="0.0"/>
+                        <GradientStop Color="#90BA71" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
                 <Border.Clip>
@@ -30,75 +44,57 @@
                 <Grid>
                     <StackPanel>
                         <TextBlock Text="We opened!&#x0a;Our delivery service"
-                                   FontSize="28"
+                                   FontSize="26"
                                    Foreground="White"
-                                   Margin="20,10,10,0"/>
+                                   Margin="20,20,10,0"
+                                   FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi"/>
                         <TextBlock Text="Click here!"
                                    FontSize="16"
                                    
                                    Foreground="White"
                                    Margin="20,10,10,0"/>
                     </StackPanel>
-                    <Image Width="254"
-                           Height="236"
-                           Source="/Images/fast_delivery.png"
-                           HorizontalAlignment="Right"
-                           VerticalAlignment="Bottom" Margin="0,0,0,-26"/>
+                    
                 </Grid>
             </Border>
-            <Border Width="300"
-                    Height="310" Margin="10 0 10 0" CornerRadius="10">
+            <Border Width="250"
+                    Height="220" Margin="20 0 20 0" CornerRadius="10">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                        <GradientStop Color="#cc973a" Offset="1"/>
-                        <GradientStop Color="#ffca49" Offset="0.0"/>
+                        <GradientStop Color="#EDC990" Offset="1"/>
+                        <GradientStop Color="#B0DE8C" Offset="0.0"/>
                     </LinearGradientBrush>
                 </Border.Background>
                 <Grid>
                     <StackPanel>
-                        <TextBlock Text="Top Brands!&#x0a;Our producers rate"
-                                   FontSize="28"
+                        <TextBlock Text="Top Books&#x0a;for our publishers "
+                                   FontSize="26"
                                    Foreground="White"
-                                   Margin="20,10,10,0"/>
-                        <StackPanel VerticalAlignment="Center" Margin="80 10 0 0">
-                            <TextBlock Text="{Binding TopProducers}" FontSize="20" Foreground="White"/>
+                                   Margin="20,20,10,0"
+                                   FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi"/>
+                        <StackPanel VerticalAlignment="Center" Margin="60 10 20 0">
+                            <TextBlock Text="{Binding TopProducers}" FontSize="24" Foreground="White" FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi"/>
                         </StackPanel>
                     </StackPanel>
                 </Grid>
             </Border>
-            <Border Width="300"
-                    Height="310" CornerRadius="10">
-                <Border.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                        <GradientStop Color="#5bc3ff" Offset="0.0"/>
-                        <GradientStop Color="#3aa0ff" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
-                <Grid>
-                    <StackPanel>
-                        <TextBlock Text="Products counter!"
-                                   FontSize="28"
-                                   Foreground="White"
-                                   Margin="20,10,10,0"/>
-                        <TextBlock FontSize="25" Foreground="White" HorizontalAlignment="Center" Text="{Binding ProductCounter, StringFormat=\{0\} products}" Margin="0 100 0 0"/>
-                    </StackPanel>
-                </Grid>
-            </Border>
+            
 
         </StackPanel>
-        <TextBlock Text="Information"
-                   Foreground="White"
+        <TextBlock Text="New"
+                   Foreground="Gray"
                    FontSize="30"
                    HorizontalAlignment="Left"
-                   Margin="0,5,0,10"/>
+                   Margin="50,25,0,0"
+                   FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi"/>
         <StackPanel Orientation="Horizontal" Height="275">
 
-            <Border Width="300"
-                    Height="250" CornerRadius="10">
+            <Border Width="250"
+                    Height="220" CornerRadius="10" Margin="20 0 20 0">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                        <GradientStop Color="#1a5730" Offset="0.0"/>
-                        <GradientStop Color="#4fff90" Offset="1"/>
+                        <GradientStop Color="#FF3EB489" Offset="0.0"/>
+                        <GradientStop Color="#90BA71" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
                 <Border.Clip>
@@ -108,67 +104,35 @@
                 </Border.Clip>
                 <Grid>
                     <StackPanel>
-                        <TextBlock Text="New items in MSI!&#x0a;Check out"
-                                   FontSize="26"
-                                   Foreground="White"
-                                   Margin="20,10,10,0"/>
-                        <TextBlock Text="Click here!"
-                                   FontSize="16"
-                                   
-                                   Foreground="White"
-                                   Margin="20,10,10,0"/>
+                        
                     </StackPanel>
-                    <Image Width="165"
-                           Height="140"
-                           Source="/Images/new_product.png"
-                           HorizontalAlignment="Right"
-                           VerticalAlignment="Bottom" Margin="0,0,25,19"/>
+                    
                 </Grid>
             </Border>
-            <Border Width="300"
-                    Height="250" Margin="10 0 10 0" CornerRadius="10">
+            <Border Width="250"
+                    Height="220" Margin="20 0 20 0" CornerRadius="10">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                        <GradientStop Color="#854eff" Offset="1"/>
-                        <GradientStop Color="#8d992e" Offset="0.0"/>
+                        <GradientStop Color="#90BA71" Offset="1"/>
+                        <GradientStop Color="#B0DE8C" Offset="0.0"/>
                     </LinearGradientBrush>
                 </Border.Background>
                 <Grid>
                     <StackPanel>
-                        <TextBlock Text="Holidays sales soon!&#x0a;Check our site"
-                                   FontSize="26"
-                                   Foreground="White"
-                                   Margin="20,10,10,0"/>
-                        <Image Width="130"
-                           Height="130"
-                           Margin="100 10 0 0"
-                           Source="/Images/money_easy.png"/>
+                        
                     </StackPanel>
                 </Grid>
             </Border>
-            <Border Width="300"
-                    Height="250" CornerRadius="10">
+            <Border Width="250"
+                    Height="220" CornerRadius="10" Margin="20 0 20 0">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                        <GradientStop Color="#3aa0ff" Offset="0.0"/>
-                        <GradientStop Color="#4fff90" Offset="1"/>
+                        <GradientStop Color="#B0DE8C" Offset="0.0"/>
+                        <GradientStop Color="#EDC990" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
                 <Grid>
-                    <StackPanel>
-                        <TextBlock Text="Information about &#x0a;our company"
-                                   FontSize="26"
-                                   Foreground="White"
-                                   Margin="20,10,10,0"/>
-                        <TextBlock Text="Check here"
-                                   FontSize="13"
-                                   Foreground="White"
-                                   Margin="20,10,10,0"/>
-                        <Image Width="130"
-                           Height="130"
-                           Margin="100 -5 0 0"
-                           Source="/Images/info_icon.png"/>
-                    </StackPanel>
+                    
                 </Grid>
             </Border>
 
