@@ -2,8 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <!--Control colors.-->
     <Color x:Key="WindowColor">#FFE8EDF9</Color>
-    <Color x:Key="ContentAreaColorLight">#FFC5CBF9</Color>
-    <Color x:Key="ContentAreaColorDark">#FF7381F9</Color>
+    <Color x:Key="ContentAreaColorLight">#B0DE8C</Color>
+    <Color x:Key="ContentAreaColorDark">#B0DE8C</Color>
 
     <Color x:Key="DisabledControlLightColor">#FFE8EDF9</Color>
     <Color x:Key="DisabledControlDarkColor">#FFC5CBF9</Color>
@@ -13,11 +13,11 @@
     <Color x:Key="SelectedUnfocusedColor">#FFDDDDDD</Color>
 
     <Color x:Key="ControlLightColor">White</Color>
-    <Color x:Key="ControlMediumColor">#FF7381F9</Color>
-    <Color x:Key="ControlDarkColor">#FF211AA9</Color>
+    <Color x:Key="ControlMediumColor">#B0DE8C</Color>
+    <Color x:Key="ControlDarkColor">#3EB489</Color>
 
-    <Color x:Key="ControlMouseOverColor">#FF3843C4</Color>
-    <Color x:Key="ControlPressedColor">#FF211AA9</Color>
+    <Color x:Key="ControlMouseOverColor">#B0DE8C</Color>
+    <Color x:Key="ControlPressedColor">#3EB489</Color>
 
 
     <Color x:Key="GlyphColor">#FF444444</Color>
@@ -41,7 +41,7 @@
     <Color x:Key="DatagridCurrentCellBorderColor">Black</Color>
     <Color x:Key="SliderTrackDarkColor">#FFC5CBF9</Color>
 
-    <Color x:Key="NavButtonFrameColor">#FF3843C4</Color>
+    <Color x:Key="NavButtonFrameColor">#90BA71</Color>
 
     <LinearGradientBrush x:Key="MenuPopupBrush"
                      EndPoint="0.5,1"
@@ -61,9 +61,9 @@
             <GradientStopCollection>
                 <GradientStop Color="#000000FF"
                     Offset="0" />
-                <GradientStop Color="#600000FF"
+                <GradientStop Color="#B0DE8C"
                     Offset="0.4" />
-                <GradientStop Color="#600000FF"
+                <GradientStop Color="#B0DE8C"
                     Offset="0.6" />
                 <GradientStop Color="#000000FF"
                     Offset="1" />
