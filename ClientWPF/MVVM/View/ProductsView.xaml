@@ -14,8 +14,8 @@
         </Grid.RowDefinitions>
         <WrapPanel>
             <TextBlock Text="Books"
-                       Foreground="White"
-                       FontSize="30"
+                       Foreground="LightGray"
+                       FontSize="28"
                        HorizontalAlignment="Left"
                        Margin="15 15"
                        FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi"/>
