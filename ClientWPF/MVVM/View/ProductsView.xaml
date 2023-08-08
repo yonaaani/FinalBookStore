@@ -42,7 +42,8 @@
                     />
             </Button>        
         </WrapPanel>
-        <ScrollViewer Background="White" Margin="2" Grid.Row="1">
+        <Image Source="../../Images/gigantTree.jpg" Grid.Row="1" Stretch="Fill"></Image>
+        <ScrollViewer Background="Transparent" Margin="2" Grid.Row="1">
             <ListView x:Name="ListViewProducts" ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" BorderThickness="0" Background="Transparent" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
