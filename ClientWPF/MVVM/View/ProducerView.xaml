@@ -13,10 +13,11 @@
         </Grid.RowDefinitions>
         <WrapPanel>
             <TextBlock Text="Producer Manager"
-                       Foreground="White"
-                       FontSize="30"
+                       Foreground="LightGray"
+                       FontSize="28"
                        HorizontalAlignment="Left"
-                       Margin="5 10"/>
+                       Margin="15 15"
+                       FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi"/>
         </WrapPanel>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
@@ -25,38 +26,85 @@
                 <RowDefinition Height="0.5*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1.8*"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="39*"/>
+                <ColumnDefinition Width="41*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Margin="0 25 0 0" Text="Here you can do CRUD operations with producers." FontSize="20" HorizontalAlignment="Center" Foreground="#1dc6df"/>
-            <StackPanel Grid.Column="0" Grid.RowSpan="2" VerticalAlignment="Center" RenderTransformOrigin="0.239,0.616" Margin="10,10,10,0">
+
+            <StackPanel Grid.Column="0" VerticalAlignment="Top" RenderTransformOrigin="0.239,0.616" Margin="10,47,10,0" Height="240" Grid.Row="1">
                 <StackPanel  Margin="0 70 0 0">
-                    <TextBlock Text="Producer name:" Foreground="White" FontSize="20" HorizontalAlignment="Center"/>
-                    <TextBox x:Name="categoryName" Text="{Binding SelectedProducer.Name}" Margin="0 10 0 0" FontSize="15pt" Width="300"/>
+                    <TextBlock Text="Producer name:" Foreground="Gray" FontSize="20" HorizontalAlignment="Center" FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi" Margin="15 15"/>
+                    <Border CornerRadius="5" BorderBrush="#e9e9e9"  BorderThickness="0.7"  Width="242" Height="35">
+                        <TextBox x:Name="categoryName" Text="{Binding SelectedProducer.Name}" Margin="-1,5,-1,5" FontSize="15pt" FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi" Foreground="Gray" Background="Transparent" BorderBrush="Transparent"/>
+                    </Border>
                 </StackPanel>
 
-                <Button Cursor="Hand" Command="{Binding SaveChangedProducer}" Style="{StaticResource CustomButtonTemplate}" Margin="0 20" Width="250" Height="40" Content="Change Producer"/>
-                <Button Cursor="Hand" Command="{Binding DeleteSelectedProducer}" Style="{StaticResource CustomButtonTemplate}" Background="#ff3a31"  Width="250" Height="40" Content="Delete Producer"/>
+                <Button Cursor="Hand" Command="{Binding SaveChangedProducer}"  Margin="0 5" Width="250" Height="40" Content="Change Producer" FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi" Foreground="White">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#FF3EB489"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#B0DE8C"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="160" Height="30"
+                                        CornerRadius="6"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Cursor="Hand" Command="{Binding DeleteSelectedProducer}"  Background="#EDC990"  Width="250" Height="40" Content="Delete Producer" FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi" Foreground="White">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#FF3EB489"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#B0DE8C"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="160" Height="30"
+                                        CornerRadius="6"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </StackPanel>
-            <TextBox 
-                Grid.Column="1"
-                Width="250"
-                Margin="0 20 0 0"
+            <TextBox
+                Margin="32,0,18,0"
                 Height="40"
-                VerticalAlignment="Top"
+                VerticalAlignment="Center"
                 FontSize="18"
-                Style="{StaticResource ModernTextBox}"/>
-            <ListBox Grid.Row="1" Grid.Column="1" x:Name="producersList" Margin="5 0"
+                Style="{StaticResource ModernTextBox}" Grid.ColumnSpan="2"
+                FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi"/>
+            <ListBox Grid.Row="1" Grid.Column="1" x:Name="producersList" Margin="45,0,55,0"
                      ItemsSource="{Binding Producers, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Name" VerticalAlignment="Center"
-                     FontSize="20" SelectedItem="{Binding SelectedProducer}" MinHeight="395" Background="#213349" Foreground="FloralWhite"/>
-            <StackPanel Grid.Row="2">
-                <TextBlock Text="Add new producer:" Foreground="White" HorizontalAlignment="Center" FontSize="20"/>
-                <TextBox x:Name="newProducerName" Width="300" FontSize="15pt" Margin="0 10 0 0" Text="{Binding NewNameProducer, UpdateSourceTrigger=PropertyChanged}"/>
+                     FontSize="20" SelectedItem="{Binding SelectedProducer}" MinHeight="395" Background="White" Foreground="Gray"  FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi" Height="395"/>
+            <StackPanel Grid.Row="1" Margin="0,342,0,0" Grid.RowSpan="2">
+                <TextBlock Text="Add new producer:" Foreground="Gray" HorizontalAlignment="Center" FontSize="20" FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi" Margin="15 15" />
+                <Border CornerRadius="5" BorderBrush="#e9e9e9"  BorderThickness="0.7"  Width="242" Height="35">
+                    <TextBox x:Name="newProducerName" FontSize="15pt" Margin="3,3,3,4" Text="{Binding NewNameProducer, UpdateSourceTrigger=PropertyChanged}" FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi" Foreground="Gray" Background="Transparent" BorderBrush="Transparent"/>
+                </Border>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <ComboBox x:Name="categoriesList" DockPanel.Dock="Left" Width="254" ItemsSource="{Binding Categories, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Name" VerticalAlignment="Center" FontSize="20" SelectedItem="{Binding SelectedCategory}"/>
+                    <ComboBox x:Name="categoriesList" DockPanel.Dock="Left" Width="196" ItemsSource="{Binding Categories, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Name" VerticalAlignment="Center" FontSize="20" SelectedItem="{Binding SelectedCategory}" FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi" Height="22" Margin="5 5"/>
                     <Button
-                        Width="45px"
-                        Height="45px"
+                        Width="25px"
+                        Height="25px"
                         Background="Transparent"
                         Command="{Binding RefreshCategories}">
                         <Image
@@ -64,10 +112,32 @@
                         HorizontalAlignment="Left"/>
                     </Button>
                 </StackPanel>
-                <Button Cursor="Hand" Command="{Binding AddProducer}" Style="{StaticResource CustomButtonTemplate}" Margin="0 20" Width="250" Height="40" Content="Add Producer"/>
+                <Button Cursor="Hand" Command="{Binding AddProducer}"  Margin="0 20" Width="250" Height="40" Content="Add Producer" FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi" Foreground="White">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#FF3EB489"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#B0DE8C"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="160" Height="30"
+                                        CornerRadius="6"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </StackPanel>
             <StackPanel Grid.Row="2" Grid.Column="1">
-                <Image Source="../../Images/supplier.png"  Margin="0 10 0 0" Width="150" Stretch="Uniform"/>
+
             </StackPanel>
         </Grid>
     </Grid>
