@@ -6,17 +6,17 @@
         xmlns:local="clr-namespace:ClientWPF.MVVM.View"
         mc:Ignorable="d"
         WindowStartupLocation="CenterOwner"
-        Background="#3d3a55"
+        Background="Transparent"
         Icon="/Images/Icons/details.ico"
-        Title="Product details" Height="840" Width="800"
+        Title="Product details" Height="888" Width="800"
         ResizeMode="NoResize"
         FontFamily="/Fonts/#Poppins">
-    <StackPanel Orientation="Vertical">
+    <StackPanel Orientation="Vertical" Margin="0,0,0,-6">
         <StackPanel x:Name="AdminStackPanel" Orientation="Horizontal" Margin="0 15 0 0">
             <ComboBox x:Name="categoriesList" DockPanel.Dock="Left" Margin="25 0 5 0" Width="400" ItemsSource="{Binding Categories, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Name" VerticalAlignment="Center" FontSize="20" SelectedItem="{Binding SelectedCategory}"/>
             <Button
-                        Width="45px"
-                        Height="45px"
+                        Width="35px"
+                        Height="35px"
                         Background="Transparent"
                         Command="{Binding RefreshCategories}">
                 <Image 
@@ -26,8 +26,8 @@
             </Button>
             <ComboBox x:Name="producersList" DockPanel.Dock="Left" Margin="20 0 5 0" Width="200" ItemsSource="{Binding Producers, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Name" VerticalAlignment="Center" FontSize="20" SelectedItem="{Binding SelectedProducer}"/>
             <Button
-                    Width="45px"
-                    Height="45px"
+                    Width="35px"
+                    Height="35px"
                     Background="Transparent"
                     Command="{Binding RefreshProducers}">
                 <Image 
@@ -39,11 +39,11 @@
         <Border HorizontalAlignment="Center"
                     CornerRadius="10"
                     Margin="0 30 0 0"
-                    BorderThickness="1.6" BorderBrush="DarkOrange"
-                    Width="600"
+                    BorderThickness="1.6" BorderBrush="LightGray"
+                    Width="500"
                     Height="490"
                     Padding="5"
-                    Background="#22202f">
+                    Background="LightGray">
             <StackPanel Orientation="Vertical">
                 <DockPanel Height="350">
                     <Button BorderThickness="0" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="prevImage_Click"
@@ -57,11 +57,11 @@
                         <Image Source="/Images/Icons/arrow-forward.png" />
                     </Button>
                     <Border
-                        Width="450" Height="350"
+                        Width="290" Height="300"
                         Padding="0"
                         CornerRadius="10"
-                        Margin="0 5 0 0"
-                                BorderThickness="1.6" BorderBrush="Gray">
+                        Margin="0 15 0 15"
+                                BorderThickness="1.6" BorderBrush="LightGray">
                         <Border.Background>
                             <ImageBrush Stretch="Fill" x:Name="imageProduct" ImageSource="/Images/Icons/defaultProductImage.png"/>
                         </Border.Background>
@@ -84,28 +84,107 @@
             </StackPanel>
         </Border>
         <StackPanel HorizontalAlignment="Center" Margin="0 10 0 0">
-            <TextBlock Text="Name" FontSize="18" Margin="5 5 0 0" Foreground="White"/>
-            <TextBox x:Name="Name"  HorizontalAlignment="Left" Width="500" Padding="5" Margin="5 0" Foreground="Black" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBlock Text="Description" FontSize="18" Margin="5 5 0 0" Foreground="White"/>
-            <TextBox x:Name="Description" HorizontalAlignment="Left" Width="500" Padding="5" Margin="5 0" Foreground="Black" Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Text="Name" FontSize="20" Margin="10 10 0 10" Foreground="Gray" FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi"/>
+            <Border CornerRadius="5" BorderBrush="#e9e9e9"  BorderThickness="0.7"  Width="502" Height="35">
+                <TextBox x:Name="Name"  HorizontalAlignment="Left" Width="500" Padding="5" Margin="5 0" Foreground="Gray" 
+                         Background="Transparent" BorderBrush="Transparent" 
+                         FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
+            </Border>
+            <TextBlock Text="Description" FontSize="20" Margin="10 10 0 10" Foreground="Gray" FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi"/>
+            <Border CornerRadius="5" BorderBrush="#e9e9e9"  BorderThickness="0.7"  Width="502" Height="35">
+                <TextBox x:Name="Description" HorizontalAlignment="Left" Width="500" Padding="5" Margin="5 0" Foreground="Gray" Background="Transparent" BorderBrush="Transparent" 
+                         FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi" Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"/>
+            </Border>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <StackPanel Orientation="Vertical">
-                    <TextBlock Text="Price" FontSize="18" Margin="10" Foreground="White"/>
-                    <TextBox x:Name="Price" Width="160" Padding="5" Margin="5 0" Foreground="Black" Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock Text="Price" FontSize="20" Margin="10" Foreground="Gray" FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi"/>
+                    <Border CornerRadius="5" BorderBrush="#e9e9e9"  BorderThickness="0.7"  Width="172" Height="35">
+                        <TextBox x:Name="Price" Width="160" Padding="5" Margin="5 0" Foreground="Gray" Background="Transparent" BorderBrush="Transparent" 
+                         FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi" Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}"/>
+                    </Border>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="160 0 0 0">
-                    <TextBlock Text="Quantity" FontSize="18" Margin="10" Foreground="White" HorizontalAlignment="Right"/>
-                    <TextBox x:Name="Quantity" Width="160" Padding="5" Margin="5 0" Foreground="Black" Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock Text="Quantity" FontSize="20" Margin="10" Foreground="Gray" HorizontalAlignment="Right" FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi"/>
+                    <Border CornerRadius="5" BorderBrush="#e9e9e9"  BorderThickness="0.7"  Width="172" Height="35">
+                        <TextBox x:Name="Quantity" Width="160" Padding="5" Margin="5 0" Foreground="Gray" Background="Transparent" BorderBrush="Transparent" 
+                         FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi" Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}"/>
+                    </Border>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button x:Name="saveChangesButton" Style="{StaticResource CustomButtonTemplate}" Margin="20" Width="250" Height="40" Content="Save Changes"
-                    Command="{Binding SaveChangesProductCommand}"/>
-            <Button x:Name="deleteProductButton" Style="{StaticResource CustomButtonTemplate}" Background="#ff3a31" Margin="20" Width="250" Height="40" Content="Delete Product"
-                    Command="{Binding DeleteProductCommand}"/>
-            <Button x:Name="buyProductButton" Style="{StaticResource CustomButtonTemplate}" Margin="20" Width="250" Height="40" Content="Buy Product"
-                    Command="{Binding BuyProductCommand}"/>
+            <Button x:Name="saveChangesButton"  Margin="5 15" Width="200" Height="40" Content="Save Changes"
+                    Command="{Binding SaveChangesProductCommand}">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FF3EB489"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#B0DE8C"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="160" Height="30"
+                                        CornerRadius="6"
+                                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="deleteProductButton"  Background="#ff3a31" Margin="5" Width="200" Height="40" Content="Delete Product"
+                    Command="{Binding DeleteProductCommand}">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FF3EB489"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#B0DE8C"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="160" Height="30"
+                                        CornerRadius="6"
+                                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="buyProductButton" Margin="5" Width="200" Height="40" Content="Buy Product"
+                    Command="{Binding BuyProductCommand}">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FF3EB489"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#B0DE8C"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="160" Height="30"
+                                        CornerRadius="6"
+                                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </StackPanel>
     </StackPanel>
 </Window>
