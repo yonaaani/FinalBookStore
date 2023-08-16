@@ -11,36 +11,91 @@
             <RowDefinition Height="60"/>
             <RowDefinition />
         </Grid.RowDefinitions>
-        <WrapPanel>
-            <TextBlock Text="My profile"
-                       Foreground="White"
+        <WrapPanel Background="Transparent">
+            <TextBlock Text="Profile"
+                       Foreground="Gray"
                        FontSize="30"
-                       HorizontalAlignment="Left"
-                       Margin="5 10"/>
+                       HorizontalAlignment="Center"
+                       Margin="15 15"
+                       FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi"/>
         </WrapPanel>
-        <DockPanel Grid.Row="1">
+        <DockPanel Grid.Row="1" Background="Transparent">
             <StackPanel DockPanel.Dock="Top" Margin="0 30 0 0">
-                <Button Background="Transparent" Command="{Binding OpenFileDialog}" Width="320" >
+                <Button Background="Transparent" Command="{Binding OpenFileDialog}" Width="320" BorderBrush="Transparent" >
                     <Border Height="300"
                                     Width="300"
                                     Padding="3 0 3 0"
                                     CornerRadius="150"
-                                BorderThickness="1.6" BorderBrush="Gray">
+                                BorderThickness="1.7" BorderBrush="#FF3EB489">
                         <Border.Background>
                             <ImageBrush Stretch="Fill" ImageSource="{Binding ImagePath, UpdateSourceTrigger=PropertyChanged}"/>
                         </Border.Background>
                     </Border>
                 </Button>
-                <Label Content="Change my photo here" Foreground="White" HorizontalAlignment="Center" FontSize="13"/>
+                <Label Content="Change my photo here" Foreground="Gray" HorizontalAlignment="Center" FontSize="20" FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Text="Name:" FontSize="18" Margin="5 5 0 0" Foreground="White"/>
-                <TextBox x:Name="NewName"  HorizontalAlignment="Left" Width="500" Padding="5" Margin="5 0" Foreground="Black" Text="{Binding NewName, UpdateSourceTrigger=PropertyChanged}"/>
-                <TextBlock Text="Password:" FontSize="18" Margin="5 5 0 0" Foreground="White"/>
-                <TextBox x:Name="NewPassword" HorizontalAlignment="Left" Width="500" Padding="5" Margin="5 0" Foreground="Black" Text="{Binding NewPassword, UpdateSourceTrigger=PropertyChanged}"/>
-                <Button Command="{Binding SaveSettings}" Style="{StaticResource CustomButtonTemplate}" Margin="0 15 0 0" Width="250" Height="40" Content="Save changed settings"/>
-                <Button Command="{Binding DeleteAccount}" Style="{StaticResource CustomButtonTemplate}" Margin="0 8 0 0" Width="250" Height="40" Background="#ff3a31" Content="DELETE my account"/>
+                <TextBlock Text="Name:" FontSize="18" Margin="15 15 0 5" Foreground="Gray" FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi"/>
+                <Border CornerRadius="5" BorderBrush="#e9e9e9"  BorderThickness="0.7"  Width="502" Height="35">
+                    <TextBox x:Name="NewName"  HorizontalAlignment="Left" Width="500" Padding="5" FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi" Margin="5 0" Foreground="Gray" Text="{Binding NewName, UpdateSourceTrigger=PropertyChanged}"
+                             Background="Transparent" BorderBrush="Transparent"/>
+                </Border>
+                <TextBlock Text="Password:" FontSize="18" Margin="15 15 0 5" Foreground="Gray" FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi"/>
+                <Border CornerRadius="5" BorderBrush="#e9e9e9"  BorderThickness="0.7"  Width="502" Height="35">
+                    <TextBox x:Name="NewPassword" HorizontalAlignment="Left" Width="500" Padding="5" Margin="5 0" FontFamily="/Fonts//Hubballi-Regular.ttf#Hubballi" Foreground="Gray" Text="{Binding NewPassword, UpdateSourceTrigger=PropertyChanged}"
+                             Background="Transparent" BorderBrush="Transparent"/>
+                </Border>
+                <Button Command="{Binding SaveSettings}"  Margin="0 15 0 0" Width="250" Height="40" Content="Save" Foreground="White">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#FF3EB489"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#B0DE8C"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="160" Height="30"
+                                        CornerRadius="6"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Command="{Binding DeleteAccount}" Margin="0 8 0 0" Width="250" Height="40" Background="#EDC990" Content="DELETE my account" Foreground="White">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#FF3EB489"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#B0DE8C"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="160" Height="30"
+                                        CornerRadius="6"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </StackPanel>
         </DockPanel>
+        <Canvas>
+            <Image Source="/Images/leaf1.png" Width="75" Height="75" Margin="585 95 0 0"></Image>
+            <Image Source="/Images/leaf2.png" Width="50" Height="50" Margin="310 330 0 0"></Image>
+        </Canvas>
     </Grid>
 </UserControl>

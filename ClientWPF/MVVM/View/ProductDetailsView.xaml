@@ -113,7 +113,7 @@
             </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button x:Name="saveChangesButton"  Margin="5 15" Width="200" Height="40" Content="Save Changes"
+            <Button x:Name="saveChangesButton"  Margin="5 15" Width="200" Height="40" Content="Save Changes" Foreground="White"
                     Command="{Binding SaveChangesProductCommand}">
                 <Button.Style>
                     <Style TargetType="Button">
@@ -137,7 +137,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="deleteProductButton"  Background="#ff3a31" Margin="5" Width="200" Height="40" Content="Delete Product"
+            <Button x:Name="deleteProductButton"  Background="#EDC990" Margin="5" Width="200" Height="40" Content="Delete Product" Foreground="White"
                     Command="{Binding DeleteProductCommand}">
                 <Button.Style>
                     <Style TargetType="Button">
@@ -161,7 +161,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button x:Name="buyProductButton" Margin="5" Width="200" Height="40" Content="Buy Product"
+            <Button x:Name="buyProductButton" Margin="5" Width="200" Height="40" Content="Buy Product" Foreground="White"
                     Command="{Binding BuyProductCommand}">
                 <Button.Style>
                     <Style TargetType="Button">
